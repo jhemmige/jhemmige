@@ -1,0 +1,157 @@
+Learning from E2E project 
+
+1. Create a Maven Project - Maven-archetype-quickstart
+2. Add dependencies in POM.xml file.
+3. App.Java is a dummy class.
+4. Create a BaseClass in Src/Main/Java - Let's assume we have 50 testcases. We cannot keep invoking the browser 50 times.
+It is added at one time in the baseclass. 
+4a. we add test cases to /test source. We add the prerequisites in base class.
+5. how smart or how better you maintain your framework but there's no specific standards
+6. next the driver variable is declared globally as public Webdriver driver, so it can be accessible by other classes as well. 
+7. Create a new class 
+in the properties file, make sure we don't have spaces at the end else script fails for a null point exception with a failure 
+of initialization of driver. 
+8. To access methods of base class one more class is created with "extends" keyword. We can also create a method within this new class and
+invoke the browser. reference "HomePage"
+9. There are 2 ways to access methods of a class - 1. is create an object for that class whose methods needs to be accessed OR
+2.create a keyword with "extends" ( as mentioned in point 8)
+
+Creating Page Oject and Integrating to It. 
+
+1. create a class called LogInPage. Add a method called SignInPage (testcase) to it. 
+2. Create a locator obj for the Login link 
+
+
+exceptions generally seen during framework :
+
+1. Null point exception error . Java obj line 
+2. Unable to locate Element
+3. No file present - incorrect file path
+
+
+Adding log4J logs to a project
+1.Create an xml file called log4j2.xml in resources package that has the baseclass and data.properties file.
+2. From mvn reposity add log4j core and Log4japi from https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api/2.14.0 or from here 
+http://logging.apache.org/log4j/2.x/maven-artifacts.html to POM.XML file of maven
+3. Add the logs to the testcases. ref : HomePage, HomePage1 &2
+4. Next, configure the POM.xml to know about the Log4J.xml file https://maven.apache.org/plugins/maven-resources-plugin/examples/filter.html
+ for this , 
+
+Add   the following xml code in build tag
+ <resources>
+      <resource>
+        <directory>src/main/resources-filtered</directory> ( ensure this folder needs to direct to the folder where the log4j2.xml is located.)
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+
+
+5 Create new package/folder in the main project called logs.
+6. create a new file with the xtension .log refer to logs>end2endprint.log
+7. Ensure the basepath and the ./log is correctly setup in property tag- else logs won't get created. 
+8. Ensure the logger has correct className
+for eg: private static Logger log = LogManager.getLogger(HomePage.class.getName()); here HomePage is class name and this should change as the className changes
+
+9. This is how TestNG.XML file was before . The issue is when we ran this test, the browser would in open state until all tests are executed and then close although
+each test here has driver.close in @aftertest . This is because both the tests are considered as 1 test instead of being treated as 2 different test.If each of this test in wrapped as
+seperate test, then the browser will close immediately.
+
+BEFORE:
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="MavenE2EJayashree.E2EProject.HomePage"/>
+      <class name="MavenE2EJayashree.E2EProject.HomePage1"/>
+    
+         <class name="MavenE2EJayashree.E2EProject.HomePage2"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+AFTER
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests">
+  <test thread-count="5" name="Validating logIn">
+    <classes>
+      <class name="MavenE2EJayashree.E2EProject.HomePage"/> 
+      </classes>
+    </test> 
+      <test thread-count="5" name="Validating Title"> 
+     <classes>
+          <class name="MavenE2EJayashree.E2EProject.HomePage2"/>
+    </classes>
+  </test> <!-- Test -->
+  <test thread-count="5" name="Validating login_homePage1"> 
+     <classes>
+          <class name="MavenE2EJayashree.E2EProject.HomePage1"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+TESTNG annotations tutorial https://testng.org/doc/documentation-main.html#native-dependency-injection
+
+10. RUNNING THE TESTS PARALLELLY should include the command - parallel="tests at suite level is testng.xml file.
+
+you can declare a local driver variable globally when a drive from base class is called by multiple other classes. Ref:  Homepage & HomePage2.
+
+ LISTENERS:
+ 
+ ITestListener is an interface created by TestNG guys that helps in getting screenshots on test failures. 
+ Any class calling this interface must implement this interface using Implements Keyword
+ ItestListners exposes various listening methods  that helps in capturing testfails. 
+ Steps: 
+1.  I created a class Listener in src/test/java. implemented ItestListener. Import the package from TestNG for it. 
+ 2. Next, go to listener class on navigation > right click > source and selecr override/implement methods . In the next screen > check all the options. 
+ This should list out the methods on the screen.
+ 3. next create a get screenshot method in base class since its a reusuable uitlity.
+ 4. Create a new method in Baseclass . 
+ Add this command line TakesScreenshot gst=(TakesScreenshot)driver;
+ 5. Next, choose the file outtype using the method gst.getscreenshotas . This would be the source  
+ 6. choose the destination . For this , we need to create a file in project 
+ 7. Name of the screenshot should be the name of the test. That way its easier for us to identify where exactly it failed. 
+ 
+ Note: Taking screenshot failed several times. Used "Public static" for both methods and variables. This helped in getting the screenshots. Took 4 hours to figure this - uff . So instead of just
+ public (variable) or public (method), we will use public static . More on the importance of static here.
+ https://www.javatpoint.com/static-keyword-in-java
+ 
+ Creating Extent Report - extentReportConfig.java ( reference)
+ 1. We need 2 classes - ExtentSparkReporter and ExtentReports. So we create objects to call those classes. 
+ 2. We need to identify a path where the report should be created ( which can be done using system.setproperty command).
+ 3. We will pass the path of the file into ExtentSparkReporter.
+ 4. We will also configure small details like report name, report title, reporter etc.
+ 5. We will pass the ESR object into ER  as an argument with the method attachReporter.- extRep.attachReporter(eSR);
+ 6. Now, the report is all set. 
+ 7. Since this report needs to be accessed by multiple other testcases ( methods) of other classes. ExtentReports obj should be declared globally. 
+ 8. Also, we will make sure we return extentReports.
+9. Using the extentReport obj, we HAVE to create a test extRep.createTest(name) , for every test Case. This should be the first line in every method if we need report to be generated.
+Instead of doing this for every TestCase, we will pass this obj into Listener class in OnTestStart method. This way , every test case will create an entry at runtime. 
+10. Note : When static is declared, we can call method by class.method instead of creating an object for that class. 
+11. Running tests parallely in extent report can fail the test 'cos mutile tests access the same extenreport driver  and hencre could report failure for another testcase instead of actual testccase that failed
+and hence we use a threadsafe method .
+
+SENDING PARAMETERS VIA MAVEN
+1. Reason we are sending parameters via Maven is for non-technical people who need not change anything at the code level but just use a small line of code on 
+terminal/cmd to run a script. So, instead of going to the properties file to change the browser of choice, we are giving a command line
+2. Simple command to run a chrome browser via is mvn test -DBrowser=Chrome . Ref to Command line 50 in Base.java 
+
+CONFIGURING JENKINS
+1. Refer to MavenAutomationJava > All about jenkins notes for initial config.
+2. To run maven test directly on Jenkins and to configure browsers  - http://localhost:8080/job/End2End/configure > check This project is parameterized >  Name = Browser
+>choices should contain the browser names - chrome, ff, ie, safari
+3. choose invoke toplevel maven > choose the maven version > and goals should be test -DBrowser="$Browser" > save.
+4. In postBuildactions >choose publish TestNG results > **/testng-results.xml ( this appears by defaults based on testNG plugIn installed).
+
+RUNNING CHROME IN HEADLESS MODE
+mvn test -DBrowser=Chrome with Browser enabled.
+> mvn test -DBrowser=Chromeheadless - this is the maven command. Jenkins is already configured to run in headless mode for this project. 
+Headless mode prevent user inception and therefore prevent tests from failing due to human intervention
+Base.java is current setup to run project in headless mode based on the command 
+
+Ensure when running it on Maven, we have the correct file is directed at .xml in POM.xml .
+Recently I encountered a problem, where maven test failed due to null point exception. Reason being, correct testng .xml file was not used in POM. 
+In the listener, there was errors on the override methods. This was due to Java compilor being directed to 1.5
+https://javarevisited.blogspot.com/2013/02/must-override-superclass-method-java-eclipse.html. I changed it to 1.8, since it is the latest.

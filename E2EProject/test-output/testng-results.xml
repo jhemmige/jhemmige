@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="32665" started-at="2021-01-13T16:59:12 IST" finished-at="2021-01-13T16:59:45 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="32665" started-at="2021-01-13T16:59:12 IST" finished-at="2021-01-13T16:59:45 IST">
+      <class name="MavenE2EJayashree.E2EProject.HomePage">
+        <test-method status="PASS" signature="initDriver()[pri:0, instance:MavenE2EJayashree.E2EProject.HomePage@367ffa75]" name="initDriver" is-config="true" duration-ms="4366" started-at="2021-01-13T16:59:12 IST" finished-at="2021-01-13T16:59:16 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initDriver -->
+        <test-method status="PASS" signature="base1PageNavigation(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:MavenE2EJayashree.E2EProject.HomePage@367ffa75]" name="base1PageNavigation" duration-ms="9933" started-at="2021-01-13T16:59:16 IST" data-provider="getData" finished-at="2021-01-13T16:59:26 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[asdf@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[jhemmige12333]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Unrestricted User]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- base1PageNavigation -->
+        <test-method status="PASS" signature="base1PageNavigation(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:MavenE2EJayashree.E2EProject.HomePage@367ffa75]" name="base1PageNavigation" duration-ms="7040" started-at="2021-01-13T16:59:26 IST" data-provider="getData" finished-at="2021-01-13T16:59:33 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[asdf123@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[jhemmige123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[restricted User]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- base1PageNavigation -->
+        <test-method status="PASS" signature="base1PageNavigation(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:MavenE2EJayashree.E2EProject.HomePage@367ffa75]" name="base1PageNavigation" duration-ms="5983" started-at="2021-01-13T16:59:33 IST" data-provider="getData" finished-at="2021-01-13T16:59:39 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[asdf1234@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[jhemmige123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[limited User]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- base1PageNavigation -->
+        <test-method status="PASS" signature="base1PageNavigation(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:MavenE2EJayashree.E2EProject.HomePage@367ffa75]" name="base1PageNavigation" duration-ms="5143" started-at="2021-01-13T16:59:39 IST" data-provider="getData" finished-at="2021-01-13T16:59:45 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[asdf123454@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[jhemmige123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[limited User new ]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- base1PageNavigation -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:MavenE2EJayashree.E2EProject.HomePage@367ffa75]" name="tearDown" is-config="true" duration-ms="132" started-at="2021-01-13T16:59:45 IST" finished-at="2021-01-13T16:59:45 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- MavenE2EJayashree.E2EProject.HomePage -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

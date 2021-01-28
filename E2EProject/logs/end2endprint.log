@@ -1,0 +1,10 @@
+16:59:26.865 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yay my printUnrestricted User
+16:59:28.756 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - url is hit
+16:59:33.927 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yay my printrestricted User
+16:59:35.086 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - url is hit
+16:59:39.912 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yay my printlimited User
+16:59:41.073 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - url is hit
+16:59:45.057 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yay my printlimited User new 
+17:00:18.948 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - browser initialized
+17:00:18.957 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - Chrome browser getting initialized
+17:00:22.117 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - url is hit

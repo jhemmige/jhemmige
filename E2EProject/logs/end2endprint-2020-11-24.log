@@ -1,0 +1,10 @@
+14:32:19.421 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - url is hit
+14:32:22.773 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yay my printlimited User
+14:32:22.773 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yippee ...my tests passed. yolo this is from listener's class 
+14:32:23.961 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - url is hit
+14:32:29.082 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yay my printlimited User new 
+14:32:29.082 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yippee ...my tests passed. yolo this is from listener's class 
+14:32:33.784 [main] INFO  MavenE2EJayashree.E2EProject.HomePage2 - I have getting the featured courses printed
+14:32:33.786 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yippee ...my tests passed. yolo this is from listener's class 
+14:32:33.885 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yippee ...my tests passed. yolo this is from listener's class 
+14:32:46.879 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - Super! This is from navigate to forgot password page!

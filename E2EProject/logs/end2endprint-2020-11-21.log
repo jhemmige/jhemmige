@@ -1,0 +1,11 @@
+23:33:16.894 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - browser initialized
+23:33:16.909 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - Chrome browser getting initialized
+23:33:19.435 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - url is hit
+23:33:25.166 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yay my printUnrestricted User
+23:33:25.174 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yippee ...my tests passed. yolo this is from listener's class 
+23:33:25.886 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - url is hit
+23:33:31.565 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yay my printrestricted User
+23:33:31.568 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yippee ...my tests passed. yolo this is from listener's class 
+23:33:32.888 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - url is hit
+23:33:37.375 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yay my printlimited User
+23:33:37.377 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yippee ...my tests passed. yolo this is from listener's class 

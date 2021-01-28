@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="MavenE2EJayashree.E2EProject.ListenerNew"/>
+  </listeners>
+  <test thread-count="5" name="Validating logIn(failed)">
+    <classes>
+      <class name="MavenE2EJayashree.E2EProject.HomePage">
+        <methods>
+          <include name="base1PageNavigation"/>
+          <include name="initDriver"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- MavenE2EJayashree.E2EProject.HomePage -->
+    </classes>
+  </test> <!-- Validating logIn(failed) -->
+  <test thread-count="5" name="Validating Title(failed)">
+    <classes>
+      <class name="MavenE2EJayashree.E2EProject.HomePage2">
+        <methods>
+          <include name="tearDown"/>
+          <include name="initializeDriver"/>
+          <include name="linkDisplay"/>
+          <include name="textSwitch"/>
+          <include name="basehomePageNavigation"/>
+        </methods>
+      </class> <!-- MavenE2EJayashree.E2EProject.HomePage2 -->
+    </classes>
+  </test> <!-- Validating Title(failed) -->
+  <test thread-count="5" name="Clicking forgotPassword(failed)">
+    <classes>
+      <class name="MavenE2EJayashree.E2EProject.navigate_to_forgotPassword_Page">
+        <methods>
+          <include name="intializenewdriver"/>
+          <include name="access_Fgtpwd_link"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- MavenE2EJayashree.E2EProject.navigate_to_forgotPassword_Page -->
+    </classes>
+  </test> <!-- Clicking forgotPassword(failed) -->
+</suite> <!-- Failed suite [Suite] -->

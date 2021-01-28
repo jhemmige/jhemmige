@@ -1,0 +1,9 @@
+19:33:35.605 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yippee ...my tests passed. yolo this is from listener's class 
+19:33:57.975 [main] INFO  MavenE2EJayashree.E2EProject.HomePage2 - I have getting the featured courses printed
+19:33:57.977 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yippee ...my tests passed. yolo this is from listener's class 
+19:33:58.071 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yippee ...my tests passed. yolo this is from listener's class 
+19:34:33.027 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - Super! This is from navigate to forgot password page!
+19:34:33.066 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - yippee ...my tests passed. yolo this is from listener's class 
+16:59:16.897 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - browser initialized
+16:59:16.901 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - Chrome browser getting initialized
+16:59:20.506 [main] INFO  MavenE2EJayashree.E2EProject.HomePage - url is hit
